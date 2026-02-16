@@ -1,0 +1,33 @@
+[package]
+name = "beethoven-client"
+description = "Client-side helper for composing Beethoven swap instructions"
+version = "0.0.1"
+license = "MIT"
+edition = "2021"
+
+[features]
+default = ["swap"]
+
+swap = [
+    "manifest",
+    "aldrin",
+    "futarchy",
+    "gamma",
+]
+
+manifest = []
+aldrin = []
+futarchy = []
+gamma = []
+
+[dependencies]
+solana-pubkey = { version = "4", features = ["curve25519"] }
+solana-instruction = "3"
+solana-rpc-client = "3"
+solana-rpc-client-api = "3"
+solana-account = "3"
+solana-account-decoder-client-types = "3"
+thiserror = "2"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
